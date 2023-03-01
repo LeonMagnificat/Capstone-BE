@@ -19,7 +19,8 @@
     "express-list-endpoints": "^6.0.0",
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.0"
+    "mongoose": "^7.0.0",
+    "shortid": "^2.2.16"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",

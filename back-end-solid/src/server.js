@@ -2,6 +2,7 @@ import express from "express";
 import listEndpoints from "express-list-endpoints";
 import cors from "cors";
 import userRouter from "./api/user/user.js";
+import groupRouter from "./api/group/group.js";
 import { badRequestHandler, unauthorizedHandler, notFoundHandler, genericHandler } from "./errorHandler.js";
 import mongoose from "mongoose";
 
@@ -12,6 +13,7 @@ server.use(express.json());
 server.use(cors());
 
 server.use("/user", userRouter);
+server.use("/group", groupRouter);
 
 server.use(badRequestHandler);
 server.use(unauthorizedHandler);
