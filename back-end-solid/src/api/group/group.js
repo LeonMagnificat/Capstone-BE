@@ -2,6 +2,7 @@ import express from "express";
 import GroupModel from "./model.js";
 import shortid from "shortid";
 import UserModel from "../user/model.js";
+import { sendEmail } from "../../library/tools/emailTools.js";
 
 const groupRouter = express.Router();
 
@@ -30,16 +31,9 @@ groupRouter.post("/inviteGroup/:groupId", async (req, res, next) => {
       return res.status(404).json({ message: "Group not found" });
     }
 
-    const user = await UserModel.findOne({ email: email });
-    if (!user) {
-      // send registration email and join group invitation
-    } else {
-      // sign in and join group
-    }
-    const hostURL = req.headers.host;
+    sendEmail("leonmagnificat@gmail.com");
 
-    const groupLink = `${hostURL}/group/${groupId}/join/${userId}`;
-    res.status(200).json(groupLink);
+    res.status(200).json();
   } catch (error) {
     next(error);
   }
