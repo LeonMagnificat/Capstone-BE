@@ -8,7 +8,7 @@ export const sendEmail = (to) => {
     from: "kakaali55@gmail.com",
     subject: "Test --------- email",
     text: "This is a test email",
-    html: "<button>click me now<button/>",
+    html: "<button>click me noc<button/>",
   };
 
   sgMail
